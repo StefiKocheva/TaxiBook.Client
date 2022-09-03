@@ -11,19 +11,26 @@ export class AuthService {
   private registerPath  = environment.apiUrl + '/identity/register'
   constructor(private http: HttpClient) { }
 
-  login(data): Observable<any> {
+  login(data: any): Observable<any> {
     return this.http.post(this.loginPath, data);
   }
 
-  register(data): Observable<any> {
+  register(data: any): Observable<any> {
     return this.http.post(this.registerPath, data)
   }
 
-  saveToken(token) {
+  saveToken(token: string) {
     localStorage.setItem('token', token)
   }
 
   getToken() {
     return localStorage.getItem('token')
+  }
+
+  isAuthenticated() {
+    if (this.getToken()) {
+      return true;
+    }
+    return false;
   }
 }

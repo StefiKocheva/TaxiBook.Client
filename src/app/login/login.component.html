@@ -19,7 +19,7 @@
                                         <i data-feather="user"></i>
                                     </div>
                                 </div>
-                                <span *ngIf="username.touched && username.errors?.required" class="text-danger">Полето е задължително.</span>
+                                <span *ngIf="username?.touched && username?.errors?.['required']" class="text-danger">Полето е задължително.</span>
                             </div>
                             <div class="form-group position-relative has-icon-left">
                                 <div class="clearfix">
@@ -34,7 +34,7 @@
                                         <i data-feather="lock"></i>
                                     </div>
                                 </div>
-                                <span class="text-danger" *ngIf="password.touched && password.errors?.required"></span>
+                                <span class="text-danger" *ngIf="password?.touched && password?.errors?.['required']"></span>
                             </div>
                             <div class='form-check clearfix my-4'>
                                 <div class="checkbox float-left">
