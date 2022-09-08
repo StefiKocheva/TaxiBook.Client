@@ -15,4 +15,8 @@ export class CompanyService {
   create(data: any): Observable<Company> {
     return this.http.post<Company>(this.companyPath, data);
   }
+
+  getCompanies(): Observable<Array<Company>> {
+    return this.http.get<Array<Company>>(this.companyPath);
+  }
 }

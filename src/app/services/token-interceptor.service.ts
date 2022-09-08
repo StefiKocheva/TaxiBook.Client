@@ -9,10 +9,7 @@ import { AuthService } from './auth.service';
 export class TokenInterceptorService implements HttpInterceptor {
 
   constructor(public authService: AuthService) { }
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    throw new Error('Method not implemented.');
-  }
-  interceptor(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     request = request.clone({
       setHeaders: {
