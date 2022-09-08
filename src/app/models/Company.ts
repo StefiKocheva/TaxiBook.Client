@@ -1,5 +1,7 @@
 export interface Company {
     id: string;
-    Name: string;
-    Description: string;
+    name: string;
+    description?: string;
+    userId?: string;
+    userName?: string;
 }
