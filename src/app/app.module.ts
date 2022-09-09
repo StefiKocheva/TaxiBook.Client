@@ -15,6 +15,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ListCompaniesComponent } from './list-companies/list-companies.component';
 import { DetailsCompanyComponent } from './details-company/details-company.component';
+import { EditCompanyComponent } from './edit-company/edit-company.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetailsCompanyComponent } from './details-company/details-company.compo
     RegisterComponent,
     CreatepostComponent,
     ListCompaniesComponent,
-    DetailsCompanyComponent
+    DetailsCompanyComponent,
+    EditCompanyComponent
   ],
   imports: [
     BrowserModule,

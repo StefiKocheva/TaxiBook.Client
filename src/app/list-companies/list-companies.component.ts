@@ -13,10 +13,24 @@ export class ListCompaniesComponent implements OnInit {
   constructor(private companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
+    this.fetchCompanies();
+  }
+
+  fetchCompanies() {
     this.companyService.getCompanies().subscribe(companies => {
       this.companies = companies;
       console.log(companies);
     })
   }
 
+  editCompany(id: string) {
+    this.router.navigate(["companies", id, "edit"])
+  }
+
+  deleteCompany(id: string) {
+    console.log("Hello")
+    this.companyService.deleteCompany(id).subscribe(res => {
+      this.fetchCompanies()
+    })
+  }
 }

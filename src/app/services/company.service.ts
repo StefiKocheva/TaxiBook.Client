@@ -23,4 +23,12 @@ export class CompanyService {
   getCompany(id: string): Observable<Company> {
     return this.http.get<Company>(this.companyPath + '/' + id);
   }
+
+  editCompany(data: any) {
+    return this.http.put(this.companyPath, data);
+  }
+
+  deleteCompany(id: string) {
+    return this.http.delete(this.companyPath + '/' + id);
+  }
 }

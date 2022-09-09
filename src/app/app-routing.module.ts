@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreatepostComponent } from './createpost/createpost.component';
 import { DetailsCompanyComponent } from './details-company/details-company.component';
+import { EditCompanyComponent } from './edit-company/edit-company.component';
 import { ListCompaniesComponent } from './list-companies/list-companies.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'create', component: CreatepostComponent, canActivate: [AuthGuardService] },
   { path: 'companies', component: ListCompaniesComponent, canActivate: [AuthGuardService] },
   { path: 'companies/:id', component: DetailsCompanyComponent },
+  { path: 'companies/:id/edit', component: EditCompanyComponent }
 ];
 
 @NgModule({
