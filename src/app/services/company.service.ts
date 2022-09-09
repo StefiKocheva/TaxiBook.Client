@@ -19,4 +19,8 @@ export class CompanyService {
   getCompanies(): Observable<Array<Company>> {
     return this.http.get<Array<Company>>(this.companyPath);
   }
+
+  getCompany(id: string): Observable<Company> {
+    return this.http.get<Company>(this.companyPath + '/' + id);
+  }
 }
